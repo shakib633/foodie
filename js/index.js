@@ -54,6 +54,7 @@ searchBtn.addEventListener("click", () => {
       resultContainer.textContent = "";
 
       // Show Results ........
+    
 
       data.meals.forEach((meal) => {
         const createDiv = document.createElement("div");
@@ -90,18 +91,20 @@ const displayMealDetails = (meal) => {
   const modalContent = document.createElement("div");
   modalContent.classList.add("row", "g-0");
   modalContent.innerHTML = `
-      <div class="col-md-4" style="background-image:url('${
+      <div class="col-md-12" style="background-image:url('${
         meal.strMealThumb
       }');background-repeat: no-repeat; background-position: center center; background-size: cover;">
           <div style="height:300px"></div>
       </div>
-      <div class="col-md-8">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          <div class="card-body text-start">
+      <div class="col-md-12">
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="card-body text-start ">
               <h3 class="card-title">${meal.strMeal}</h3>
               <p class="area">Type: <span>${meal.strArea}</span></p>
               <p class="category">Category: <span>${meal.strCategory}</span></p>
-              <p class="card-text">${meal.strInstructions.slice(0, 500)}...</p>
+              <p class="card-text">${meal.strInstructions.slice(0, 5000)}...</p>
+             
+
               <p class="ingredients">Ingredients: <span>${
                 meal.strIngredient1
               }</span><span>${meal.strIngredient2}</span><span>${
@@ -109,10 +112,12 @@ const displayMealDetails = (meal) => {
   }</span><span>${meal.strIngredient4}</span><span>${
     meal.strIngredient5
   }</span><span>${meal.strIngredient6}</span></p>
-  <button  type="button" class="btn btn-succes" ><a target="_blank" href="${meal.strYoutube}" class="btn btn-primary"> Watch Tutorial </a> </button>
-
-          </div>
+  
+            </div>
       </div>
+      <p><button  type="button" class="btn btn-succes fw-bold" ><a target="_blank" href="${meal.strYoutube}" class="btn btn-warning  fw-bold text-white fs-4"> Watch Tutorial
+   </a> </button></p>
+      
   `;
 
   parentDetailsContainer.textContent = "";
