@@ -107,6 +107,8 @@ const displayMealDetails = (meal) => {
   }</span><span>${meal.strIngredient4}</span><span>${
     meal.strIngredient5
   }</span><span>${meal.strIngredient6}</span></p>
+  <button  type="button" class="btn btn-succes" ><a target="_blank" href="${meal.strYoutube}" class="btn btn-primary"> Watch Tutorial </a> </button>
+
           </div>
       </div>
   `;
