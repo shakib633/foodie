@@ -12,7 +12,7 @@ searchBtn.addEventListener("click", () => {
   if (searchField.value == "") {
     errorDiv.innerText = "😝 Please write something to search";
   } else {
-    errorDiv.innerText = "";
+    errorDiv.textContent = "";
 
     // Spinner
 
@@ -26,12 +26,14 @@ searchBtn.addEventListener("click", () => {
         .then((data) => displayMeals(data))
         .catch((error) => displayError(error));
     };
+    
     const displayError = (error) => {
       searchField.value = "";
-      document.getElementById("result-container").textContent = "";
+     document.getElementById("result-container").textContent = "";
       let errorMessage = "No result found 😔";
       const resultCount = document.getElementById("result-count");
       resultCount.innerText = errorMessage;
+       
     };
     loadMeals();
 
